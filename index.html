@@ -1,10 +1,13 @@
 <!doctype html>
-<html lang="en" dir="ltr">
+<html lang="ku" dir="rtl">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Click IT | Ultimate Smart Links</title>
+  <title>Click IT | Smart Links</title>
   <meta name="theme-color" content="#2b2b2b">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root{
       --bg:#f5f5f6;
@@ -14,391 +17,81 @@
       --muted:#6c6c73;
       --accent:#f5a000;
       --accent-dark:#d88b00;
-      --dark:#2b2b2b;
       --line:#e8e8eb;
       --shadow:0 18px 50px rgba(0,0,0,.10);
       --radius-xl:34px;
       --radius-lg:24px;
-      --radius-md:18px;
       --max:1020px;
     }
-
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
       color:var(--text);
-      font-family:Inter,"Segoe UI",Tahoma,Arial,sans-serif;
+      font-family:"Noto Sans Arabic","Segoe UI",Tahoma,Arial,sans-serif;
       background:
         radial-gradient(circle at top right, rgba(245,160,0,.18), transparent 20%),
         radial-gradient(circle at bottom left, rgba(245,160,0,.10), transparent 18%),
         linear-gradient(180deg, #f9f9fa 0%, #f1f1f2 100%);
     }
-
     .page{width:min(var(--max), calc(100% - 28px)); margin:24px auto 40px}
-
     .hero{
-      position:relative;
-      overflow:hidden;
-      border-radius:var(--radius-xl);
+      position:relative; overflow:hidden; border-radius:var(--radius-xl);
       background:linear-gradient(135deg, #242424 0%, #2f2f32 55%, #3a3732 100%);
-      color:#fff;
-      box-shadow:0 24px 65px rgba(0,0,0,.18);
+      color:#fff; box-shadow:0 24px 65px rgba(0,0,0,.18);
       border:1px solid rgba(255,255,255,.08);
-      animation:fadeUp .7s ease both;
     }
     .hero:before{
-      content:"";
-      position:absolute;
-      right:-120px;
-      top:-120px;
-      width:320px;height:320px;
+      content:""; position:absolute; right:-120px; top:-120px; width:320px; height:320px;
       background:radial-gradient(circle, rgba(245,160,0,.34), transparent 68%);
-      pointer-events:none;
     }
-    .hero:after{
-      content:"";
-      position:absolute;
-      left:-120px;
-      bottom:-120px;
-      width:280px;height:280px;
-      background:radial-gradient(circle, rgba(255,255,255,.06), transparent 70%);
-      pointer-events:none;
-    }
-
-    .hero-inner{
-      position:relative;
-      z-index:1;
-      display:grid;
-      grid-template-columns: 240px 1fr;
-      gap:28px;
-      align-items:center;
-      padding:28px;
-    }
-
-    .logo-panel{
-      background:rgba(255,255,255,.07);
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:30px;
-      padding:16px;
-      backdrop-filter: blur(6px);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
-    }
-    .logo-frame{
-      background:linear-gradient(180deg, #ffffff, #f8f8f8);
-      border-radius:24px;
-      padding:16px;
-      min-height:220px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      box-shadow:0 10px 28px rgba(0,0,0,.14);
-    }
-    .logo{
-      width:100%;
-      max-height:180px;
-      object-fit:contain;
-      display:block;
-      animation:floatLogo 4s ease-in-out infinite;
-      filter: drop-shadow(0 10px 14px rgba(0,0,0,.08));
-    }
-
-    .hero-copy h1{
-      margin:0 0 10px;
-      font-size:clamp(34px, 5vw, 54px);
-      line-height:1;
-      letter-spacing:.3px;
-    }
-    .hero-copy p{
-      margin:0;
-      color:rgba(255,255,255,.86);
-      line-height:1.8;
-      max-width:640px;
-      font-size:15px;
-    }
-
-    .hero-badges{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:16px;
-    }
-    .hero-badge{
-      padding:9px 13px;
-      border-radius:999px;
-      background:rgba(245,160,0,.14);
-      color:#ffd98f;
-      border:1px solid rgba(245,160,0,.28);
-      font-size:12px;
-      font-weight:800;
-    }
-
-    .topbar{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      flex-wrap:wrap;
-      gap:12px;
-      margin:18px 2px 0;
-    }
-
-    .lang-switch{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-    }
-    .lang-btn{
-      border:none;
-      cursor:pointer;
-      padding:10px 16px;
-      border-radius:999px;
-      font-weight:800;
-      color:var(--text);
-      background:#fff;
-      border:1px solid var(--line);
-      box-shadow:0 10px 25px rgba(0,0,0,.05);
-      transition:.18s ease;
-    }
+    .hero-inner{position:relative; z-index:1; display:grid; grid-template-columns:240px 1fr; gap:28px; align-items:center; padding:28px}
+    .logo-panel{background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.10); border-radius:30px; padding:16px; backdrop-filter:blur(6px)}
+    .logo-frame{background:linear-gradient(180deg, #ffffff, #f8f8f8); border-radius:24px; padding:16px; min-height:220px; display:flex; align-items:center; justify-content:center; box-shadow:0 10px 28px rgba(0,0,0,.14)}
+    .logo{width:100%; max-height:180px; object-fit:contain; display:block; filter:drop-shadow(0 10px 14px rgba(0,0,0,.08))}
+    .hero-copy h1{margin:0 0 10px; font-size:clamp(34px, 5vw, 54px); line-height:1.2}
+    .hero-copy p{margin:0; color:rgba(255,255,255,.86); line-height:1.95; max-width:640px; font-size:15px}
+    .hero-badges{display:flex; flex-wrap:wrap; gap:10px; margin-top:16px}
+    .hero-badge{padding:9px 13px; border-radius:999px; background:rgba(245,160,0,.14); color:#ffd98f; border:1px solid rgba(245,160,0,.28); font-size:12px; font-weight:800}
+    .topbar{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin:18px 2px 0}
+    .lang-switch{display:flex; flex-wrap:wrap; gap:10px}
+    .lang-btn{border:none; cursor:pointer; padding:10px 16px; border-radius:999px; font-weight:800; color:var(--text); background:#fff; border:1px solid var(--line); box-shadow:0 10px 25px rgba(0,0,0,.05); transition:.18s ease}
     .lang-btn:hover{transform:translateY(-2px)}
-    .lang-btn.active{
-      background:var(--accent);
-      color:#1d1d1d;
-      border-color:transparent;
-      box-shadow:0 12px 26px rgba(245,160,0,.22);
-    }
-    .mini-note{
-      color:var(--muted);
-      font-size:14px;
-      font-weight:700;
-    }
-
-    .panel{
-      margin-top:18px;
-      background:rgba(255,255,255,.86);
-      border:1px solid rgba(255,255,255,.85);
-      backdrop-filter:blur(9px);
-      border-radius:32px;
-      box-shadow:var(--shadow);
-      overflow:hidden;
-      animation:fadeUp .9s ease both;
-    }
-    .panel-head{
-      padding:24px 24px 8px;
-    }
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      color:var(--accent-dark);
-      font-weight:900;
-      font-size:12px;
-      letter-spacing:1px;
-      text-transform:uppercase;
-    }
-    .eyebrow-dot{
-      width:8px;height:8px;border-radius:50%;background:var(--accent);
-    }
-    .title{
-      margin:8px 0 6px;
-      font-size:31px;
-      line-height:1.15;
-    }
-    .subtitle{
-      margin:0;
-      color:var(--muted);
-      font-size:15px;
-      line-height:1.75;
-      max-width:760px;
-    }
-
-    .feature-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:14px;
-    }
-    .feature{
-      padding:9px 12px;
-      border-radius:999px;
-      background:#fff8e7;
-      color:#8c5900;
-      border:1px solid #f7d68f;
-      font-size:12px;
-      font-weight:900;
-    }
-
-    .action-grid{
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:16px;
-      padding:18px 22px 8px;
-    }
-    .action-card{
-      border:1px solid var(--line);
-      border-radius:24px;
-      padding:18px;
-      background:linear-gradient(180deg, #fff, #fcfcfc);
-      box-shadow:0 8px 22px rgba(0,0,0,.04);
-    }
-    .qr-box{
-      min-height:180px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      border:2px dashed #f0c86c;
-      border-radius:20px;
-      background:linear-gradient(180deg, #fffaf0, #fff);
-      color:#8c6500;
-      font-weight:900;
-      text-align:center;
-      padding:18px;
-      line-height:1.8;
-    }
-    .action-buttons{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-top:14px;
-    }
-    .action-btn{
-      text-decoration:none;
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:12px 16px;
-      border-radius:16px;
-      font-weight:800;
-      transition:.18s ease;
-    }
-    .action-btn.primary{
-      background:var(--accent);
-      color:#1d1d1d;
-      box-shadow:0 12px 24px rgba(245,160,0,.18);
-    }
-    .action-btn.secondary{
-      background:#fff;
-      color:var(--text);
-      border:1px solid var(--line);
-      box-shadow:0 8px 18px rgba(0,0,0,.04);
-    }
-    .action-btn:hover{transform:translateY(-2px)}
-
-    .links{
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:14px;
-      padding:16px 22px 24px;
-    }
-    .link-card{
-      text-decoration:none;
-      color:inherit;
-      background:linear-gradient(180deg, #fff, var(--surface-soft));
-      border:1px solid var(--line);
-      border-radius:24px;
-      padding:16px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
-      min-height:90px;
-      box-shadow:0 8px 22px rgba(0,0,0,.04);
-      transition:.18s ease;
-    }
-    .link-card:hover{
-      transform:translateY(-4px);
-      border-color:#f1c66a;
-      box-shadow:0 18px 32px rgba(245,160,0,.14);
-    }
-    .left{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      min-width:0;
-    }
-    .icon{
-      width:52px;height:52px;flex:0 0 52px;
-      border-radius:18px;
-      display:grid;place-items:center;
-      background:linear-gradient(135deg, rgba(245,160,0,.18), rgba(245,160,0,.06));
-      border:1px solid rgba(245,160,0,.25);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.6);
-    }
-    .icon svg{
-      width:24px;height:24px;
-      stroke:var(--accent-dark);
-      fill:none;
-      stroke-width:1.9;
-      stroke-linecap:round;
-      stroke-linejoin:round;
-    }
+    .lang-btn.active{background:var(--accent); color:#1d1d1d; border-color:transparent; box-shadow:0 12px 26px rgba(245,160,0,.22)}
+    .mini-note{color:var(--muted); font-size:14px; font-weight:700}
+    .panel{margin-top:18px; background:rgba(255,255,255,.86); border:1px solid rgba(255,255,255,.85); backdrop-filter:blur(9px); border-radius:32px; box-shadow:var(--shadow); overflow:hidden}
+    .panel-head{padding:24px 24px 8px}
+    .eyebrow{display:inline-flex; align-items:center; gap:8px; color:var(--accent-dark); font-weight:900; font-size:12px; letter-spacing:1px; text-transform:uppercase}
+    .eyebrow-dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+    .title{margin:8px 0 6px; font-size:31px; line-height:1.3}
+    .subtitle{margin:0; color:var(--muted); font-size:15px; line-height:1.95; max-width:760px}
+    .feature-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
+    .feature{padding:9px 12px; border-radius:999px; background:#fff8e7; color:#8c5900; border:1px solid #f7d68f; font-size:12px; font-weight:900}
+    .links{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; padding:16px 22px 24px}
+    .link-card{text-decoration:none; color:inherit; background:linear-gradient(180deg, #fff, var(--surface-soft)); border:1px solid var(--line); border-radius:24px; padding:16px; display:flex; align-items:center; justify-content:space-between; gap:14px; min-height:90px; box-shadow:0 8px 22px rgba(0,0,0,.04); transition:.18s ease}
+    .link-card:hover{transform:translateY(-4px); border-color:#f1c66a; box-shadow:0 18px 32px rgba(245,160,0,.14)}
+    .left{display:flex; align-items:center; gap:14px; min-width:0}
+    .icon{width:52px;height:52px;flex:0 0 52px; border-radius:18px; display:grid;place-items:center; background:linear-gradient(135deg, rgba(245,160,0,.18), rgba(245,160,0,.06)); border:1px solid rgba(245,160,0,.25)}
+    .icon svg{width:24px;height:24px; stroke:var(--accent-dark); fill:none; stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round}
     .icon svg.fill{fill:var(--accent-dark);stroke:none}
     .txt{min-width:0}
-    .txt strong{
-      display:block;
-      font-size:16px;
-      margin-bottom:4px;
-    }
-    .txt span{
-      display:block;
-      font-size:13px;
-      color:var(--muted);
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
-    .arrow{color:#9b9ba1;font-size:22px}
-
-    .about{
-      margin-top:18px;
-      border-radius:30px;
-      overflow:hidden;
-      background:linear-gradient(135deg, #232323 0%, #2d2d30 100%);
-      color:#fff;
-      box-shadow:0 18px 42px rgba(0,0,0,.14);
-      animation:fadeUp 1.05s ease both;
-    }
-    .about-inner{
-      padding:24px;
-    }
-    .about h3{
-      margin:0 0 10px;
-      font-size:28px;
-    }
-    .about p{
-      margin:0;
-      color:rgba(255,255,255,.85);
-      line-height:1.9;
-      font-size:15px;
-      max-width:800px;
-    }
-
-    .footer{
-      padding:16px 10px 4px;
-      text-align:center;
-      color:#8f8f96;
-      font-size:12px;
-      font-weight:600;
-    }
-
+    .txt strong{display:block; font-size:16px; margin-bottom:4px}
+    .txt span{display:block; font-size:13px; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+    .arrow{color:#9b9ba1; font-size:22px}
+    .about{margin-top:18px; border-radius:30px; overflow:hidden; background:linear-gradient(135deg, #232323 0%, #2d2d30 100%); color:#fff; box-shadow:0 18px 42px rgba(0,0,0,.14)}
+    .about-inner{padding:24px}
+    .about h3{margin:0 0 10px; font-size:28px}
+    .about p{margin:0; color:rgba(255,255,255,.85); line-height:1.95; font-size:15px; max-width:800px}
+    .footer{padding:16px 10px 4px; text-align:center; color:#8f8f96; font-size:12px; font-weight:600}
     [data-lang]{display:none}
     [data-lang].show{display:block}
-    .rtl{direction:rtl;text-align:right;font-family:Tahoma,"Segoe UI",Arial,sans-serif}
-
-    @keyframes fadeUp{
-      from{opacity:0;transform:translateY(14px)}
-      to{opacity:1;transform:translateY(0)}
-    }
-    @keyframes floatLogo{
-      0%,100%{transform:translateY(0)}
-      50%{transform:translateY(-6px)}
-    }
-
+    .rtl{direction:rtl;text-align:right}
+    .ltr{direction:ltr;text-align:left;font-family:Inter,"Segoe UI",Arial,sans-serif}
     @media (max-width:840px){
       .hero-inner{grid-template-columns:1fr;text-align:center}
       .logo-panel{max-width:280px;margin:0 auto}
       .hero-copy p{margin:auto}
       .hero-badges{justify-content:center}
-      .action-grid{grid-template-columns:1fr}
       .links{grid-template-columns:1fr}
       .title{font-size:26px}
     }
@@ -410,18 +103,18 @@
       <div class="hero-inner">
         <div class="logo-panel">
           <div class="logo-frame">
-            <img src="logo.png" alt="Click IT Logo" class="logo">
+            <img src='logo.png' alt='Click IT Logo' class='logo'>
           </div>
         </div>
 
         <div class="hero-copy">
-          <div data-lang="en" class="show">
-            <h1>Click IT</h1>
-            <p>Professional destination for computers, laptops, accessories, maintenance, and smart technical support — all your important links in one premium page.</p>
-          </div>
-          <div data-lang="ku" class="rtl">
+          <div data-lang="ku" class="show rtl">
             <h1>Click IT</h1>
             <p>شوێنێکی پرۆفیشناڵ بۆ کۆمپیوتەر، لاپتۆپ، ئەکسسوارات، چاکسازی و پاڵپشتی تەکنیکیی زیرەک — هەموو لینکە گرنگەکانت لە یەک پەڕەی نایابدا.</p>
+          </div>
+          <div data-lang="en" class="ltr">
+            <h1>Click IT</h1>
+            <p>Professional destination for computers, laptops, accessories, maintenance, and smart technical support — all your important links in one premium page.</p>
           </div>
           <div data-lang="ar" class="rtl">
             <h1>Click IT</h1>
@@ -429,9 +122,9 @@
           </div>
 
           <div class="hero-badges">
-            <div class="hero-badge" id="heroBadge1">Computers & Laptops</div>
-            <div class="hero-badge" id="heroBadge2">Accessories</div>
-            <div class="hero-badge" id="heroBadge3">Maintenance & Support</div>
+            <div class="hero-badge" id="heroBadge1">کۆمپیوتەر و لاپتۆپ</div>
+            <div class="hero-badge" id="heroBadge2">ئەکسسوارات</div>
+            <div class="hero-badge" id="heroBadge3">چاکسازی و پاڵپشتی</div>
           </div>
         </div>
       </div>
@@ -439,115 +132,84 @@
 
     <div class="topbar">
       <div class="lang-switch">
-        <button class="lang-btn active" onclick="setLang('en', this)">English</button>
-        <button class="lang-btn" onclick="setLang('ku', this)">کوردی</button>
+        <button class="lang-btn active" onclick="setLang('ku', this)">کوردی</button>
+        <button class="lang-btn" onclick="setLang('en', this)">English</button>
         <button class="lang-btn" onclick="setLang('ar', this)">العربية</button>
       </div>
-      <div class="mini-note" id="miniNote">Choose your language • هەڵبژاردنی زمان • اختر لغتك</div>
+      <div class="mini-note" id="miniNote">هەڵبژاردنی زمان • Choose your language • اختر لغتك</div>
     </div>
 
     <section class="panel">
       <div class="panel-head">
-        <div class="eyebrow"><span class="eyebrow-dot"></span><span id="eyebrowText">Official Links</span></div>
+        <div class="eyebrow"><span class="eyebrow-dot"></span><span id="eyebrowText">لینکە فەرمییەکان</span></div>
 
-        <div data-lang="en" class="show">
-          <h2 class="title">Connect with Click IT</h2>
-          <p class="subtitle">Visit the website, save our contact, open social media, or use the QR section later when your final public link is ready.</p>
-        </div>
-        <div data-lang="ku" class="rtl">
+        <div data-lang="ku" class="show rtl">
           <h2 class="title">پەیوەندی بکە بە Click IT</h2>
-          <p class="subtitle">وێبسایتەکە ببینە، پەیوەندییەکەمان پاشەکەوت بکە، سۆشیال میدیامان بکەرەوە، یان دواتر بەشی QR بەکاربهێنە کاتێک لینکی کۆتایی ئامادە بوو.</p>
+          <p class="subtitle">وێبسایتەکە ببینە، پەیوەندی ڕاستەوخۆ بکە، سۆشیال میدیامان بکەرەوە و زانیارییەکانمان بە خێرایی و ئاسان ببینە.</p>
+        </div>
+        <div data-lang="en" class="ltr">
+          <h2 class="title">Connect with Click IT</h2>
+          <p class="subtitle">Visit the website, contact us directly, explore our social media, and reach our information quickly and easily.</p>
         </div>
         <div data-lang="ar" class="rtl">
           <h2 class="title">تواصل مع Click IT</h2>
-          <p class="subtitle">زر الموقع، احفظ جهة الاتصال، افتح صفحات التواصل الاجتماعي، أو استخدم قسم QR لاحقاً عندما يصبح الرابط النهائي جاهزاً.</p>
+          <p class="subtitle">زر الموقع، تواصل معنا مباشرة، افتح صفحات التواصل الاجتماعي، واطّلع على معلوماتنا بسرعة وسهولة.</p>
         </div>
 
         <div class="feature-row">
-          <div class="feature" id="feature1">Fast Contact</div>
-          <div class="feature" id="feature2">Social Media</div>
-          <div class="feature" id="feature3">Save Contact</div>
-          <div class="feature" id="feature4">QR Ready</div>
-        </div>
-      </div>
-
-      <div class="action-grid">
-        <div class="action-card">
-          <div data-lang="en" class="show">
-            <h3 style="margin:0 0 8px;font-size:22px">Quick Actions</h3>
-            <p style="margin:0;color:var(--muted);line-height:1.75">Save the contact card now, and later we can place the final QR here as soon as your published page link is fixed.</p>
-          </div>
-          <div data-lang="ku" class="rtl">
-            <h3 style="margin:0 0 8px;font-size:22px">کردارە خێراکـان</h3>
-            <p style="margin:0;color:var(--muted);line-height:1.75">ئێستا کارتەی پەیوەندی پاشەکەوت بکە، و دواتر دەتوانین QRی کۆتایی لێرە دابنێین کاتێک لینکی بڵاوکراوەکەت یەکلا بوو.</p>
-          </div>
-          <div data-lang="ar" class="rtl">
-            <h3 style="margin:0 0 8px;font-size:22px">إجراءات سريعة</h3>
-            <p style="margin:0;color:var(--muted);line-height:1.75">احفظ بطاقة جهة الاتصال الآن، وبعد ذلك يمكننا وضع رمز QR النهائي هنا بمجرد تثبيت رابط الصفحة المنشورة.</p>
-          </div>
-
-          <div class="action-buttons">
-            <a class="action-btn primary" href="clickit.vcf" download id="saveBtn">Save Contact</a>
-            <a class="action-btn secondary" href="javascript:void(0)" id="qrBtn">QR Section Ready</a>
-          </div>
-        </div>
-
-        <div class="action-card">
-          <div class="qr-box">
-            QR WILL BE ADDED HERE LATER<br>
-            دواتر QR لێرە زیاد دەکرێت<br>
-            سيتم إضافة QR هنا لاحقاً
-          </div>
+          <div class="feature" id="feature1">پەیوەندی خێرا</div>
+          <div class="feature" id="feature2">سۆشیال میدیا</div>
+          <div class="feature" id="feature3">زانیاریی فەرمی</div>
         </div>
       </div>
 
       <div class="links">
         <a class="link-card" href="https://www.click2011.com" target="_blank" rel="noopener">
-          <div class="left"><div class="icon"><svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></div><div class="txt"><strong id="websiteLabel">Website</strong><span>www.click2011.com</span></div></div><div class="arrow">›</div>
+          <div class="left"><div class="icon"><svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></div><div class="txt"><strong id="websiteLabel">وێبسایت</strong><span>www.click2011.com</span></div></div><div class="arrow">›</div>
         </a>
         <a class="link-card" href="https://wa.me/9647701861986" target="_blank" rel="noopener">
-          <div class="left"><div class="icon"><svg viewBox="0 0 24 24"><path d="M17 10c0-3.866-3.134-7-7-7S3 6.134 3 10c0 1.23.319 2.385.878 3.392L3 21l7.78-.83A6.968 6.968 0 0 0 10 17c3.866 0 7-3.134 7-7Z"/></svg></div><div class="txt"><strong id="whatsappLabel">WhatsApp</strong><span>07701861986</span></div></div><div class="arrow">›</div>
+          <div class="left"><div class="icon"><svg viewBox="0 0 24 24"><path d="M17 10c0-3.866-3.134-7-7-7S3 6.134 3 10c0 1.23.319 2.385.878 3.392L3 21l7.78-.83A6.968 6.968 0 0 0 10 17c3.866 0 7-3.134 7-7Z"/></svg></div><div class="txt"><strong id="whatsappLabel">واتسئەپ</strong><span>07701861986</span></div></div><div class="arrow">›</div>
         </a>
         <a class="link-card" href="https://t.me/Click_Suli" target="_blank" rel="noopener">
-          <div class="left"><div class="icon"><svg viewBox="0 0 24 24"><path d="m21 3-9 9"/><path d="M12 12 3 9l18-6-5 18-6-9Z"/></svg></div><div class="txt"><strong id="telegramLabel">Telegram</strong><span>@Click_Suli</span></div></div><div class="arrow">›</div>
+          <div class="left"><div class="icon"><svg viewBox="0 0 24 24"><path d="m21 3-9 9"/><path d="M12 12 3 9l18-6-5 18-6-9Z"/></svg></div><div class="txt"><strong id="telegramLabel">تیلیگرام</strong><span>@Click_Suli</span></div></div><div class="arrow">›</div>
         </a>
         <a class="link-card" href="https://instagram.com/clickit.suli" target="_blank" rel="noopener">
-          <div class="left"><div class="icon"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle class="fill" cx="17.5" cy="6.5" r="1.1"/></svg></div><div class="txt"><strong id="instagramLabel">Instagram</strong><span>clickit.suli</span></div></div><div class="arrow">›</div>
+          <div class="left"><div class="icon"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle class="fill" cx="17.5" cy="6.5" r="1.1"/></svg></div><div class="txt"><strong id="instagramLabel">ئینستاگرام</strong><span>clickit.suli</span></div></div><div class="arrow">›</div>
         </a>
         <a class="link-card" href="https://www.facebook.com/clickcomputer" target="_blank" rel="noopener">
-          <div class="left"><div class="icon"><svg viewBox="0 0 24 24"><path d="M15 8h-2a2 2 0 0 0-2 2v11"/><path d="M9 12h6"/><rect x="3" y="3" width="18" height="18" rx="4"/></svg></div><div class="txt"><strong id="facebookLabel">Facebook</strong><span>clickcomputer</span></div></div><div class="arrow">›</div>
+          <div class="left"><div class="icon"><svg viewBox="0 0 24 24"><path d="M15 8h-2a2 2 0 0 0-2 2v11"/><path d="M9 12h6"/><rect x="3" y="3" width="18" height="18" rx="4"/></svg></div><div class="txt"><strong id="facebookLabel">فەیسبووک</strong><span>clickcomputer</span></div></div><div class="arrow">›</div>
         </a>
         <a class="link-card" href="https://www.tiktok.com/@clickforcomputer" target="_blank" rel="noopener">
-          <div class="left"><div class="icon"><svg viewBox="0 0 24 24"><path d="M14 3c1.2 1.7 2.9 3 5 3v3.2c-1.9 0-3.6-.6-5-1.7v6.7c0 3-2.4 5.4-5.4 5.4S3.2 17.2 3.2 14.2 5.6 8.8 8.6 8.8c.6 0 1.1.1 1.6.3v3.2a2.2 2.2 0 0 0-1.6-.7c-1.2 0-2.2 1-2.2 2.2S7.4 16 8.6 16s2.2-1 2.2-2.2V3H14Z"/></svg></div><div class="txt"><strong id="tiktokLabel">TikTok</strong><span>@clickforcomputer</span></div></div><div class="arrow">›</div>
+          <div class="left"><div class="icon"><svg viewBox="0 0 24 24"><path d="M14 3c1.2 1.7 2.9 3 5 3v3.2c-1.9 0-3.6-.6-5-1.7v6.7c0 3-2.4 5.4-5.4 5.4S3.2 17.2 3.2 14.2 5.6 8.8 8.6 8.8c.6 0 1.1.1 1.6.3v3.2a2.2 2.2 0 0 0-1.6-.7c-1.2 0-2.2 1-2.2 2.2S7.4 16 8.6 16s2.2-1 2.2-2.2V3H14Z"/></svg></div><div class="txt"><strong id="tiktokLabel">تیکتۆک</strong><span>@clickforcomputer</span></div></div><div class="arrow">›</div>
         </a>
         <a class="link-card" href="mailto:zana@click2011.com">
-          <div class="left"><div class="icon"><svg viewBox="0 0 24 24"><path d="m4 7 8 6 8-6"/><rect x="3" y="5" width="18" height="14" rx="3"/></svg></div><div class="txt"><strong id="emailLabel">Email</strong><span>zana@click2011.com</span></div></div><div class="arrow">›</div>
+          <div class="left"><div class="icon"><svg viewBox="0 0 24 24"><path d="m4 7 8 6 8-6"/><rect x="3" y="5" width="18" height="14" rx="3"/></svg></div><div class="txt"><strong id="emailLabel">ئیمەیڵ</strong><span>zana@click2011.com</span></div></div><div class="arrow">›</div>
         </a>
         <a class="link-card" href="tel:+9647701861986">
-          <div class="left"><div class="icon"><svg viewBox="0 0 24 24"><path d="M6 2h4l2 5-2 2c1.5 3 3.5 5 6.5 6.5l2-2 5 2v4c0 1-1 2-2 2C13 22 2 11 2 4c0-1 1-2 2-2Z"/></svg></div><div class="txt"><strong id="callLabel">Call</strong><span>07701861986</span></div></div><div class="arrow">›</div>
+          <div class="left"><div class="icon"><svg viewBox="0 0 24 24"><path d="M6 2h4l2 5-2 2c1.5 3 3.5 5 6.5 6.5l2-2 5 2v4c0 1-1 2-2 2C13 22 2 11 2 4c0-1 1-2 2-2Z"/></svg></div><div class="txt"><strong id="callLabel">پەیوەندی</strong><span>07701861986</span></div></div><div class="arrow">›</div>
         </a>
         <a class="link-card" href="https://maps.google.com/?q=Click%20IT%20Sulaimani%20Iraq" target="_blank" rel="noopener">
-          <div class="left"><div class="icon"><svg viewBox="0 0 24 24"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></div><div class="txt"><strong id="locationLabel">Location</strong><span>Click IT • Sulaimani, Iraq</span></div></div><div class="arrow">›</div>
+          <div class="left"><div class="icon"><svg viewBox="0 0 24 24"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></div><div class="txt"><strong id="locationLabel">شوێن</strong><span>Click IT • Sulaimani, Iraq</span></div></div><div class="arrow">›</div>
         </a>
       </div>
     </section>
 
     <section class="about">
       <div class="about-inner">
-        <div data-lang="en" class="show"><h3>About Us</h3><p>Click IT specializes in computer and laptop sales, hardware accessories, maintenance, and dependable technical support. We focus on product quality, fast response, practical solutions, and trusted customer service for everyday users and businesses alike.</p></div>
-        <div data-lang="ku" class="rtl"><h3>دەربارەی ئێمە</h3><p>Click IT تایبەتە بە فرۆشی کۆمپیوتەر و لاپتۆپ، ئەکسسواراتی هاردوێر، چاکسازی و پاڵپشتی تەکنیکیی متمانەپێکراو. سەرنج دەدەین بە کوالیتیی بەرهەم، وەڵامدانەوەی خێرا، چارەسەری کارامە و خزمەتگوزاریی باش بۆ کڕیارانی ئاسایی و بزنس.</p></div>
+        <div data-lang="ku" class="show rtl"><h3>دەربارەی ئێمە</h3><p>Click IT تایبەتە بە فرۆشی کۆمپیوتەر و لاپتۆپ، ئەکسسواراتی هاردوێر، چاکسازی و پاڵپشتی تەکنیکیی متمانەپێکراو. سەرنج دەدەین بە کوالیتیی بەرهەم، وەڵامدانەوەی خێرا، چارەسەری کارامە و خزمەتگوزاریی باش بۆ کڕیارانی ئاسایی و بزنس.</p></div>
+        <div data-lang="en" class="ltr"><h3>About Us</h3><p>Click IT specializes in computer and laptop sales, hardware accessories, maintenance, and dependable technical support. We focus on product quality, fast response, practical solutions, and trusted customer service for everyday users and businesses alike.</p></div>
         <div data-lang="ar" class="rtl"><h3>من نحن</h3><p>تتخصص Click IT في بيع أجهزة الكمبيوتر واللابتوبات وملحقات الهاردوير والصيانة والدعم التقني الموثوق. نركز على جودة المنتجات، سرعة الاستجابة، الحلول العملية، وخدمة العملاء الموثوقة للأفراد والأعمال.</p></div>
       </div>
     </section>
 
-    <div class="footer" id="footerText">© Click IT — Ultimate smart links page</div>
+    <div class="footer" id="footerText">© Click IT — پەڕەی نایابی لینکەکان</div>
   </div>
 
   <script>
     const ui = {
-      en:{dir:"ltr",miniNote:"Choose your language • هەڵبژاردنی زمان • اختر لغتك",eyebrow:"Official Links",feature1:"Fast Contact",feature2:"Social Media",feature3:"Save Contact",feature4:"QR Ready",website:"Website",whatsapp:"WhatsApp",telegram:"Telegram",instagram:"Instagram",facebook:"Facebook",tiktok:"TikTok",email:"Email",call:"Call",location:"Location",save:"Save Contact",qr:"QR Section Ready",hero1:"Computers & Laptops",hero2:"Accessories",hero3:"Maintenance & Support",footer:"© Click IT — Ultimate smart links page"},
-      ku:{dir:"rtl",miniNote:"زمانەکەت هەڵبژێرە",eyebrow:"لینکە فەرمییەکان",feature1:"پەیوەندی خێرا",feature2:"سۆشیال میدیا",feature3:"پاشەکەوتی پەیوەندی",feature4:"ئامادەی QR",website:"وێبسایت",whatsapp:"واتسئەپ",telegram:"تیلیگرام",instagram:"ئینستاگرام",facebook:"فەیسبووک",tiktok:"تیکتۆک",email:"ئیمەیڵ",call:"پەیوەندی",location:"شوێن",save:"پاشەکەوتی پەیوەندی",qr:"بەشی QR ئامادەیە",hero1:"کۆمپیوتەر و لاپتۆپ",hero2:"ئەکسسوارات",hero3:"چاکسازی و پاڵپشتی",footer:"© Click IT — پەڕەی نایابی لینکەکان"},
-      ar:{dir:"rtl",miniNote:"اختر لغتك",eyebrow:"الروابط الرسمية",feature1:"تواصل سريع",feature2:"وسائل التواصل",feature3:"حفظ جهة الاتصال",feature4:"قسم QR جاهز",website:"الموقع الإلكتروني",whatsapp:"واتساب",telegram:"تيليجرام",instagram:"إنستغرام",facebook:"فيسبوك",tiktok:"تيك توك",email:"البريد الإلكتروني",call:"اتصال",location:"الموقع",save:"حفظ جهة الاتصال",qr:"قسم QR جاهز",hero1:"حواسيب ولابتوبات",hero2:"إكسسوارات",hero3:"صيانة ودعم",footer:"© Click IT — صفحة الروابط الاحترافية النهائية"}
+      ku:{dir:"rtl",miniNote:"هەڵبژاردنی زمان • Choose your language • اختر لغتك",eyebrow:"لینکە فەرمییەکان",feature1:"پەیوەندی خێرا",feature2:"سۆشیال میدیا",feature3:"زانیاریی فەرمی",website:"وێبسایت",whatsapp:"واتسئەپ",telegram:"تیلیگرام",instagram:"ئینستاگرام",facebook:"فەیسبووک",tiktok:"تیکتۆک",email:"ئیمەیڵ",call:"پەیوەندی",location:"شوێن",hero1:"کۆمپیوتەر و لاپتۆپ",hero2:"ئەکسسوارات",hero3:"چاکسازی و پاڵپشتی",footer:"© Click IT — پەڕەی نایابی لینکەکان"},
+      en:{dir:"ltr",miniNote:"Choose your language • هەڵبژاردنی زمان • اختر لغتك",eyebrow:"Official Links",feature1:"Fast Contact",feature2:"Social Media",feature3:"Official Info",website:"Website",whatsapp:"WhatsApp",telegram:"Telegram",instagram:"Instagram",facebook:"Facebook",tiktok:"TikTok",email:"Email",call:"Call",location:"Location",hero1:"Computers & Laptops",hero2:"Accessories",hero3:"Maintenance & Support",footer:"© Click IT — Ultimate smart links page"},
+      ar:{dir:"rtl",miniNote:"اختر لغتك • Choose your language • هەڵبژاردنی زمان",eyebrow:"الروابط الرسمية",feature1:"تواصل سريع",feature2:"وسائل التواصل",feature3:"معلومات رسمية",website:"الموقع الإلكتروني",whatsapp:"واتساب",telegram:"تيليجرام",instagram:"إنستغرام",facebook:"فيسبوك",tiktok:"تيك توك",email:"البريد الإلكتروني",call:"اتصال",location:"الموقع",hero1:"حواسيب ولابتوبات",hero2:"إكسسوارات",hero3:"صيانة ودعم",footer:"© Click IT — صفحة الروابط الاحترافية"},
     };
     function setLang(lang, btn){
       document.documentElement.lang = lang;
@@ -561,7 +223,6 @@
       document.getElementById('feature1').textContent = ui[lang].feature1;
       document.getElementById('feature2').textContent = ui[lang].feature2;
       document.getElementById('feature3').textContent = ui[lang].feature3;
-      document.getElementById('feature4').textContent = ui[lang].feature4;
       document.getElementById('websiteLabel').textContent = ui[lang].website;
       document.getElementById('whatsappLabel').textContent = ui[lang].whatsapp;
       document.getElementById('telegramLabel').textContent = ui[lang].telegram;
@@ -571,13 +232,13 @@
       document.getElementById('emailLabel').textContent = ui[lang].email;
       document.getElementById('callLabel').textContent = ui[lang].call;
       document.getElementById('locationLabel').textContent = ui[lang].location;
-      document.getElementById('saveBtn').textContent = ui[lang].save;
-      document.getElementById('qrBtn').textContent = ui[lang].qr;
       document.getElementById('heroBadge1').textContent = ui[lang].hero1;
       document.getElementById('heroBadge2').textContent = ui[lang].hero2;
       document.getElementById('heroBadge3').textContent = ui[lang].hero3;
       document.getElementById('footerText').textContent = ui[lang].footer;
     }
+    // default Kurdish
+    setTimeout(() => setLang('ku', document.querySelectorAll('.lang-btn')[0]), 0);
   </script>
 </body>
 </html>
